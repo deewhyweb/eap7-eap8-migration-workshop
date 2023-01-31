@@ -1,0 +1,13 @@
+#Thu Nov 03 14:00:05 EDT 2022
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/model/Member.java=1667415856914
+configuration*?=33C025A6EC2B46A75451D4988EFA292CD8E377F6
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/rest/JaxRsActivator.java=1667415856914
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/resources/META-INF/persistence.xml=1667415856915
+/home/philip/projects/eap-quickstarts/kitchensink/src/test/java/org/jboss/as/quickstarts/kitchensink/test/MemberRegistrationIT.java=1667415856915
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/data/MemberRepository.java=1667415856914
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/util/Resources.java=1667415856915
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/data/MemberListProducer.java=1667415856914
+module-resource*?\:/wildfly-checkstyle/suppressions.xml=DD3FD5987C62C3034A4613F83C42B24683BCFC2E
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/controller/MemberController.java=1667415856914
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/service/MemberRegistration.java=1667415856915
+/home/philip/projects/eap-quickstarts/kitchensink/src/main/java/org/jboss/as/quickstarts/kitchensink/rest/MemberResourceRESTService.java=1667415856914

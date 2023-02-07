@@ -4,6 +4,10 @@ To run, first start a mysql database using docker-compose
 
 `docker-compose up`
 
+or using podman
+
+docker run --name myPostgresDb -p 5432:5432 -e POSTGRES_USER=postgresUser -e POSTGRES_PASSWORD=postgresPW  -e POSTGRES_DB=postgresDB -d postgres
+
 Run wildfly, from the EAP_HOME folder, run:
 
 `./bin/standalone.sh`
@@ -22,9 +26,13 @@ Add the driver and datasource, from the EAP_HOME folder, run:
 
 jboss-cli.sh
 
-/subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql)
+/subsystem=datasources/jdbc-driver=postgresql:add(driver-name=postgresql,driver-module-name=org.postgresql)
 
-data-source add --name=mysql --jndi-name=java:/jdbc/mysql --driver-name=mysql --connection-url=jdbc:mysql://127.0.0.1:3306/books --user-name=root --password=root
+data-source add --name=postgresql --jndi-name=java:/jdbc/postgresql --driver-name=postgresql --connection-url=jdbc:postgresql://127.0.0.1:5432/postgresDB --user-name=postgresUser --password=postgresPW
 ```
 
 Test the kitchen sink app at url:  http://127.0.0.1:8080/kitchensink/index.jsf
+
+
+
+        

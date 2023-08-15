@@ -1,38 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     JBoss, Home of Professional Open Source
-    Copyright 2015, Red Hat, Inc. and/or its
-affiliates, and individual
+    Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
     contributors by the @authors tag. See the copyright.txt in the
-distribution for a full listing of individual contributors.
+    distribution for a full listing of individual contributors.
 
-    Licensed under the Apache License,
-Version 2.0 (the "License");
+    Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+    You may obtain a copy of the License at
     http://www.apache.org/licenses/LICENSE-2.0
-    Unless
-required by applicable law or agreed to in writing, software
-    distributed under the License is
-distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-implied.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
-    limitations
-under the License.
+    limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-        <groupId>org.jboss.eap.quickstarts</groupId>
-
-
+    <groupId>org.jboss.eap.quickstarts</groupId>
     <version>7.4.0.GA</version>
-    <artifactId>sample-app</artifactId>
+    <artifactId>kitchensink</artifactId>
     <packaging>war</packaging>
-    <name>EAP8 Sample app</name>
+    <name>Quickstart: kitchensink</name>
     <description>A starter Jakarta EE web application project for use in JBoss EAP</description>
 
     <licenses>
@@ -43,7 +34,7 @@ under the License.
         </license>
     </licenses>
     <properties>
-        <version.eap.maven.plugin>1.0.0.Beta6-redhat-00001</version.eap.maven.plugin>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
@@ -61,19 +52,14 @@ under the License.
         <version.checkstyle>8.5</version.checkstyle>
         <version.jaxws-tools-maven-plugin>1.2.3.Final</version.jaxws-tools-maven-plugin>
         <!-- Explicitly declaring the source encoding eliminates the following
-            message:
-        [WARNING] Using platform encoding (UTF-8 actually) to copy
-            filtered resources,
-        i.e. build is platform dependent! -->
+            message: [WARNING] Using platform encoding (UTF-8 actually) to copy
+            filtered resources, i.e. build is platform dependent! -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Protocol to use for communication with remote maven repositories.
-                     You
-        can set to 'http' if you are using a maven proxy and 'https'
-                     interferes
-        with that. Use 'https' for builds that will be released
-                     to non-snapshot
-        public maven repos -->
+                     You can set to 'http' if you are using a maven proxy and 'https'
+                     interferes with that. Use 'https' for builds that will be released
+                     to non-snapshot public maven repos -->
         <maven.repository.protocol>https</maven.repository.protocol>
         <!-- The full remote maven repo URL; can be overridden via -D for special use cases -->
         <maven.repository.url>
@@ -82,8 +68,8 @@ under the License.
         <maven.redhat.repository.url>${maven.repository.protocol}://maven.repository.redhat.com/ga/</maven.redhat.repository.url>
 
         <!-- Version of BOMs
-        note: a SNAPSHOT version *requires* checkout of BOMs at
-        https://github.com/wildfly/boms and build through "mvn clean install"
+        note: a SNAPSHOT version *requires* checkout of BOMs at https://github.com/wildfly/boms and build
+        through "mvn clean install"
         -->
         <version.server.bom>8.0.0.Beta-redhat-00004</version.server.bom>
 
@@ -96,6 +82,42 @@ under the License.
         <linkXRef>false</linkXRef>
         <version.microprofile.bom>3.0.0.GA</version.microprofile.bom>
     </properties>
+    <pluginRepositories>
+        <!-- keep this repository the first -->
+        <pluginRepository>
+            <id>jboss-public-maven-repository</id>
+            <name>JBoss Public Maven Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>redhat-ga-maven-repository</id>
+            <name>Red Hat GA Maven Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>redhat-ea-maven-repository</id>
+            <name>Red Hat Early Access Maven Repository</name>
+            <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
     <repositories>
         <repository>
             <releases>
@@ -140,42 +162,6 @@ under the License.
             <layout>default</layout>
         </repository>
     </repositories>
-    <pluginRepositories>
-        <!-- keep this repository the first -->
-        <pluginRepository>
-            <id>jboss-public-maven-repository</id>
-            <name>JBoss Public Maven Repository</name>
-            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>redhat-ga-maven-repository</id>
-            <name>Red Hat GA Maven Repository</name>
-            <url>https://maven.repository.redhat.com/ga/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>redhat-ea-maven-repository</id>
-            <name>Red Hat Early Access Maven Repository</name>
-            <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
     <dependencyManagement>
 
         <dependencies>
@@ -192,12 +178,10 @@ under the License.
     </dependencyManagement>
     <dependencies>
         <!-- First declare the APIs we depend on and need for compilation. All
-            of them
-        are provided by JBoss EAP -->
+            of them are provided by JBoss EAP -->
 
         <!-- Import the CDI API, we use provided scope as the API is included in
-            JBoss
-        EAP -->
+            JBoss EAP -->
         <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
@@ -214,8 +198,7 @@ under the License.
         <!-- Now we declare any tools needed -->
 
         <!-- Annotation processor to generate the JPA metamodel classes for
-            typesafe
-        criteria queries -->
+            typesafe criteria queries -->
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
@@ -229,8 +212,7 @@ under the License.
         </dependency>
 
         <!-- Bean Validation Implementation 
-             Provides portable constraints such as
-        @Email 
+             Provides portable constraints such as @Email 
              Hibernate Validator is shipped in JBoss EAP -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -245,8 +227,7 @@ under the License.
         </dependency>
 
         <!-- Annotation processor that raising compilation errors whenever constraint
-            annotations
-        are incorrectly used. -->
+            annotations are incorrectly used. -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-annotation-processor</artifactId>
@@ -254,8 +235,7 @@ under the License.
         </dependency>
 
         <!-- Import the JPA API, we use provided scope as the API is included in
-            JBoss
-        EAP -->
+            JBoss EAP -->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
@@ -264,8 +244,7 @@ under the License.
 
         <!-- Optional, but highly recommended -->
         <!-- Arquillian allows you to test enterprise code such as EJBs and Transactional(JTA)
-            JPA
-        from JUnit/TestNG -->
+            JPA from JUnit/TestNG -->
         <dependency>
             <groupId>org.jboss.arquillian.junit</groupId>
             <artifactId>arquillian-junit-container</artifactId>
@@ -279,8 +258,7 @@ under the License.
         </dependency>
 
         <!-- Import the Common Annotations API (JSR-250), we use provided scope
-            as the
-        API is included in JBoss EAP -->
+            as the API is included in JBoss EAP -->
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
@@ -288,8 +266,7 @@ under the License.
         </dependency>
 
         <!-- Import the EJB API, we use provided scope as the API is included in
-            JBoss
-        EAP -->
+            JBoss EAP -->
         <dependency>
             <groupId>jakarta.ejb</groupId>
             <artifactId>jakarta.ejb-api</artifactId>
@@ -297,8 +274,7 @@ under the License.
         </dependency>
 
         <!-- Import the JSF API, we use provided scope as the API is included in
-            JBoss
-        EAP -->
+            JBoss EAP -->
         <dependency>
             <groupId>jakarta.faces</groupId>
             <artifactId>jakarta.faces-api</artifactId>
@@ -306,8 +282,7 @@ under the License.
         </dependency>
 
         <!-- Import the JAX-RS API, we use provided scope as the API is included
-            in
-        JBoss EAP -->
+            in JBoss EAP -->
         <dependency>
             <groupId>jakarta.ws.rs</groupId>
             <artifactId>jakarta.ws.rs-api</artifactId>
@@ -321,8 +296,7 @@ under the License.
         </dependency>
 
     </dependencies>
-
-<profiles>
+    <profiles>
         <profile>
             <id>openshift</id>
             <build>
@@ -333,16 +307,13 @@ under the License.
                         <version>3.3.2</version>
                         <configuration>
                             <warName>ROOT</warName>
-                          
-                                <failOnMissingWebXml>false</failOnMissingWebXml>
-                            </configuration>
-                      
+                            <failOnMissingWebXml>false</failOnMissingWebXml>
+                        </configuration>
                     </plugin>
                     <plugin>
-                        
                         <groupId>org.jboss.eap.plugins</groupId>
                         <artifactId>eap-maven-plugin</artifactId>
-                        <version>${version.eap.maven.plugin}</version>
+                        <version>1.0.0.Beta6-redhat-00001</version>
                         <configuration>
                             <channels>
                                 <channel>
@@ -381,7 +352,24 @@ under the License.
                 </plugins>
             </build>
         </profile>
-
     </profiles>
+    <build>
+        <!-- Set the name of the WAR, used as the context root when the app is deployed -->
+        <finalName>ROOT</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>${version.wildfly.maven.plugin}</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

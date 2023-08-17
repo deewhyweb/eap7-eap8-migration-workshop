@@ -1,6 +1,3 @@
-
-<h1 align="center"><a href="#">Start here!</a></h1>
-
 # EAP 7 to EAP 8 migration workshop
 
 This workshop is designed to guide you through the process of migrating a JBoss EAP 7.4 server to JBoss EAP 8-Beta.  The workshop covers the following areas:
@@ -15,12 +12,4 @@ This workshop is designed to guide you through the process of migrating a JBoss 
 * Test the eap-maven-plugin in local environment
 * Build application image in OpenShift
 * Deploy application image to OpenShift using the EAP operator
-
-
-## Get Started
-
-### Instructions
-
-1. [Set up your environment](instructions/1-environment-setup.md)
-
 
